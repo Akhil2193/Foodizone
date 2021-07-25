@@ -13,6 +13,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 const restaurantSchema = new mongoose.Schema({
     name: String,
     type: String,
+    openTime: Number,
+    closeTime: Number,
     foodItems: [
         {
             name: String,
@@ -26,6 +28,8 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 // const kfc = new Restaurant({
 //     name: 'KFC',
 //     type: 'Fast-food',
+//     openTime: 7,
+//     closeTime: 22,
 //     foodItems:[
 //         {
 //             name:'Veg-Burger',
