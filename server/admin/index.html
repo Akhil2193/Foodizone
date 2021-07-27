@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    Welcome to the admin portal!
+    <div class="title">Register your Restaurant</div>
+    <form action="/admin" method="post">
+        <div class="restaurant-name">
+            <label for="name">Name</label>
+            <input type="text" placeholder="Enter Name of your Restaurant" name="name">
+        </div>
+        <div class="restaurant-description">
+            <label for="description">Briefly describe yourself</label>
+            <input type="text" name="description">
+        </div>
+        <div class="restaurant-type">
+            <label for="type">Food categories</label>
+            <input type="text" name="type">
+        </div>
+        <div class="restaurant-timings">
+            <label for="time">Open during:</label>
+            <input type="text" name="time">
+        </div>
+        
+    </form>
+</body>
+</html>

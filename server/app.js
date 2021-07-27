@@ -6,7 +6,8 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const uri = 'mongodb+srv://akhil:fooddelievery@cluster0.9z6rv.mongodb.net/restaurants?retryWrites=true&w=majority';
+// const uri = 'mongodb+srv://akhil:fooddelievery@cluster0.9z6rv.mongodb.net/restaurants?retryWrites=true&w=majority';
+const uri = 'mongodb://akhil:fooddelievery@cluster0-shard-00-00.9z6rv.mongodb.net:27017,cluster0-shard-00-01.9z6rv.mongodb.net:27017,cluster0-shard-00-02.9z6rv.mongodb.net:27017/restaurants?ssl=true&replicaSet=atlas-4rhtc8-shard-0&authSource=admin&retryWrites=true&w=majority'
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -25,31 +26,50 @@ const restaurantSchema = new mongoose.Schema({
 })
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 //-----to create a restaurant-----
-// const kfc = new Restaurant({
-//     name: 'KFC',
-//     type: 'Fast-food',
-//     openTime: 7,
-//     closeTime: 22,
-//     foodItems:[
-//         {
-//             name:'Veg-Burger',
-//             price: 100,
-//             veg: true
-//         },
-//         {
-//             name:'Chicken Burger',
-//             price:200,
-//             veg:false
-//         }
-//     ]
-// })
-// kfc.save(function(err,kfc){
-//     if(err){
-//         console.log(err);
+// for (var i = 0; i < 16; i++) {
+
+
+//     const res = new Restaurant({
+//         name: `Restaurant ${i+1}`,
+//         type: 'Fast-food',
+//         time: '8am - 10pm',
+//         foodItems: [
+//             {
+//                 name: 'Veg-Burger',
+//                 price: 100,
+//                 veg: true
+//             },
+//             {
+//                 name: 'Chicken Burger',
+//                 price: 200,
+//                 veg: false
+//             },
+//             {
+//                 name: 'Pizza',
+//                 price: 199,
+//                 veg: true
+
+//             }
+            
+//         ]
+//     })
+
+//     for (let index = 0; index < 20; index++) {
+//         var lel = Math.floor(Math.random() * 2);
+//         res.foodItems.push({
+//             name: `dish ${index+12}`,
+//             price: `${Math.floor(Math.random() * 500) + 20}`,
+//             veg:`${lel===0?false:true}`
+
+//         })
 //     }
-// })
+//     res.save(function (err, presentRes) {
+//         if (err) {
+//             console.log(err);
+//         }
+//     })
+// }
 app.get('/api', function (req, res) {
-    // res.send("Hello")
     Restaurant.find(function (err, restaurants) {
         if (err) {
             console.log(err);
@@ -60,16 +80,24 @@ app.get('/api', function (req, res) {
     })
 })
 app.route('/api/:restaurantName')
-.get(function(req,res){
-    Restaurant.findOne({name: req.params.restaurantName},function(err,restaurant){
-        if(restaurant){
-            res.send(restaurant)
-        }
-        else{
-            res.send('No restaurants found by that name')
-        }
+    .get(function (req, res) {
+        Restaurant.findOne({ name: req.params.restaurantName }, function (err, restaurant) {
+            if (restaurant) {
+                res.send(restaurant)
+            }
+            else {
+                res.send('No restaurants found by that name')
+            }
+        })
     })
-})
+//admin portal
+app.route('/admin')
+    .get(function (req, res) {
+        res.sendFile(__dirname + '/admin/index.html')
+    });
+
+
+
 app.listen(port, function () {
     console.log(`Server is running at port ${port}...`);
 })
