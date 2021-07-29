@@ -1,1 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 /* navbar styling */
+/* @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap'); */
+.navbar{
+    border-bottom: 1px solid #dadada;
+    max-width: 110rem;
+    margin: 0px auto;
+
+}
+.navbar-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-list-items{
+    margin: 1rem 3rem;
+}
+.logo{
+    font-family: 'Style Script', cursive;
+    font-size: 2.5rem;
+}
+.authorisation{
+    font-family: 'Nanum Gothic', sans-serif;
+    color: rgb(120,120,120);
+    margin: 0px;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.authorisation a{
+    text-decoration: none;
+    color: rgb(120,120,120);
+}
+.authorisation a:hover{
+    color: black;
+    cursor: pointer;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0px;
+}
+#search-bar{
+    font-size: 1.1rem;
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 40rem;
+    height: 4.4rem;
+    background: rgb(255, 255, 255);
+    border-radius: 0.8rem;
+    box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
+    border: 1px solid rgb(232, 232, 232);
+    padding: 1rem;
+}
