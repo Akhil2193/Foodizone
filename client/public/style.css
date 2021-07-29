@@ -47,9 +47,12 @@
     align-items: center;
     margin-left: 0px;
 }
+.search label{
+    margin-left: 0.5rem;
+}
 #search-bar{
     font-size: 1.1rem;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Roboto', sans-serif;
     width: 40rem;
     height: 4.4rem;
     background: rgb(255, 255, 255);
@@ -57,4 +60,10 @@
     box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
     border: 1px solid rgb(232, 232, 232);
     padding: 1rem;
+    padding-left: 1.5rem;
+    outline: none;
+}
+#search-bar::placeholder{
+    
+    color:rgb(151, 151, 151);;
 }
