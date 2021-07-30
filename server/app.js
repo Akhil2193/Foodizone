@@ -70,6 +70,7 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 //     })
 // }
 app.get('/api', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
     Restaurant.find(function (err, restaurants) {
         if (err) {
             console.log(err);
