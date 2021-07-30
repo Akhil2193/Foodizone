@@ -3,6 +3,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
+#root{
+    max-width: 80%;
+    margin: 0px auto;
+}
 /* navbar styling */
 /* @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap'); */
 .navbar{
@@ -65,5 +69,41 @@
 }
 #search-bar::placeholder{
     
-    color:rgb(151, 151, 151);;
+    color:rgb(151, 151, 151);
+}
+/* Page-content */
+.restaurant-list{
+    display: flex;
+    /* max-width: 80%; */
+    flex-wrap: wrap;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+.restaurant-list .restaurant-container{
+    padding: 1rem 1rem 2rem 2rem;
+    cursor: pointer;
+}
+.restaurant-list .restaurant-container .restaurant-image{
+    width: 20rem;
+    border-radius: 0.5rem;
+}
+.restaurant-list .restaurant-container .restaurant-container-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0.3rem 0rem;
+    
+}
+.restaurant-list .restaurant-container .restaurant-container-rating{
+    font-family: 'Roboto',sans-serif;
+    color:rgb(151, 151, 151);
+}
+.restaurant-list .restaurant-container .restaurant-container-type{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    /* white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis; */
 }
