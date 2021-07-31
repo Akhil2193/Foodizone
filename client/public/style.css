@@ -1,106 +1,173 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
-#root{
+
+/* #root{
     max-width: 80%;
     margin: 0px auto;
-}
-/* navbar styling */
-/* @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap'); */
-.navbar{
-    border-bottom: 1px solid #dadada;
-    max-width: 110rem;
-    margin: 0px auto;
+} */
 
+/* navbar styling */
+
+.navbar {
+    border-bottom: 1px solid #dadada;
+    max-width: 1260px;
+    margin: 0px auto;
 }
-.navbar-list{
+
+.navbar-list {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
-.navbar-list-items{
-    margin: 1rem 3rem;
+
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column;
+    }
 }
-.logo{
+
+@media (min-width:769px) {
+    .navbar-list-items {
+        margin: 1rem 3rem;
+    }
+}
+
+.logo {
     font-family: 'Style Script', cursive;
     font-size: 2.5rem;
 }
-.authorisation{
+
+.authorisation {
     font-family: 'Nanum Gothic', sans-serif;
-    color: rgb(120,120,120);
+    color: rgb(120, 120, 120);
     margin: 0px;
     margin-right: 1rem;
     padding: 0.5rem;
     font-size: 1.2rem;
     text-decoration: none;
 }
-.authorisation a{
+
+.authorisation a {
     text-decoration: none;
-    color: rgb(120,120,120);
+    color: rgb(120, 120, 120);
 }
-.authorisation a:hover{
+
+.authorisation a:hover {
     color: black;
     cursor: pointer;
 }
-.search{
+
+@media (max-width:768px) {
+    .authorisation {
+        display: none;
+    }
+}
+
+.search {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 0px;
+    /* position: sticky;
+    position: -webkit-sticky; */
 }
-.search label{
+
+@media (max-width:768px) {
+    .search {
+        width: 100%;
+        padding: 0.6rem;
+    }
+    #search-bar {
+        width: 100%;
+    }
+    .search label {
+        position: absolute;
+        right: 1.5rem;
+    }
+}
+
+.search-sticky {
+    position: fixed;
+    top: 0px;
+}
+
+.search label {
     margin-left: 0.5rem;
 }
-#search-bar{
-    font-size: 1.1rem;
+
+#search-bar {
+    /*font-size: 1.1rem; */
     font-family: 'Roboto', sans-serif;
-    width: 40rem;
-    height: 4.4rem;
+    min-width: 300px;
+    height: 3.4rem;
     background: rgb(255, 255, 255);
     border-radius: 0.8rem;
     box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
     border: 1px solid rgb(232, 232, 232);
     padding: 1rem;
-    padding-left: 1.5rem;
+    /* padding-left: 1.5rem; */
     outline: none;
 }
-#search-bar::placeholder{
-    
-    color:rgb(151, 151, 151);
+
+#search-bar::placeholder {
+    color: rgb(151, 151, 151);
+}
+.mobile-authentication-icon{
+    position: fixed;
+    display: block;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    background-color: white;
+    box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
+    border-top: 1px solid #d6d6d6;
+    padding: 0.4rem;
+}
+@media (min-width:769px) {
+    .mobile-authentication-icon{
+        display: none;
+    }
 }
 /* Page-content */
-.restaurant-list{
+
+.restaurant-list {
     display: flex;
-    /* max-width: 80%; */
+    max-width: 1260px;
     flex-wrap: wrap;
     margin: 0px auto;
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
 }
-.restaurant-list .restaurant-container{
-    padding: 1rem 1rem 2rem 2rem;
+
+.restaurant-list .restaurant-container {
+    padding: 10px;
     cursor: pointer;
 }
-.restaurant-list .restaurant-container .restaurant-image{
-    width: 20rem;
+
+.restaurant-list .restaurant-container .restaurant-image {
+    width: 300px;
     border-radius: 0.5rem;
 }
-.restaurant-list .restaurant-container .restaurant-container-title{
+
+.restaurant-list .restaurant-container .restaurant-container-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
     font-size: 1.5rem;
     padding: 0.3rem 0rem;
-    
 }
-.restaurant-list .restaurant-container .restaurant-container-rating{
-    font-family: 'Roboto',sans-serif;
-    color:rgb(151, 151, 151);
+
+.restaurant-list .restaurant-container .restaurant-container-rating {
+    font-family: 'Roboto', sans-serif;
+    color: rgb(151, 151, 151);
 }
-.restaurant-list .restaurant-container .restaurant-container-type{
+
+.restaurant-list .restaurant-container .restaurant-container-type {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     /* white-space: nowrap;
