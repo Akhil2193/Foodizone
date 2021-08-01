@@ -1,20 +1,20 @@
 import React from "react";
-// import axios from "axios";
-import Navbar from "./Navbar"
-import RestaurantList from "./RestaurantList";
+import Home from "./Home";
+import Order from "./Order";
+import {BrowserRouter as Router, Switch,Route,Link} from "react-router-dom";
+
 function App() {
     return (
-
-        <div>
-            <Navbar />
-            
-            {/* <Restaurant />
-            <Restaurant />
-            <Restaurant />
-            <Restaurant /> */}
-            <RestaurantList />
-            
-        </div>
+        <Switch>
+            <Route exact path={`/:id/order`}>
+                <Order />
+                
+            </Route>
+            <Route exact path="/">
+                <Home />
+            </Route>
+        </Switch>
+        
     );
 }
 

@@ -80,9 +80,10 @@ app.get('/api', function (req, res) {
         }
     })
 })
-app.route('/api/:restaurantName')
+app.route('/api/:id')
     .get(function (req, res) {
-        Restaurant.findOne({ name: req.params.restaurantName }, function (err, restaurant) {
+        res.header("Access-Control-Allow-Origin", "*");
+        Restaurant.findOne({ _id: req.params.id }, function (err, restaurant) {
             if (restaurant) {
                 res.send(restaurant)
             }
