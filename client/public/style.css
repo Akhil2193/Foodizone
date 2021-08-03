@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-/* #root{
-    max-width: 80%;
-    margin: 0px auto;
-} */
 
 /* navbar styling */
 
@@ -28,6 +24,7 @@
 @media (max-width: 768px) {
     .navbar-list {
         flex-direction: column;
+        
     }
 }
 
@@ -73,6 +70,7 @@
     justify-content: space-between;
     align-items: center;
     margin-left: 0px;
+    /* position: fixed; */
     /* position: sticky;
     position: -webkit-sticky; */
 }
@@ -122,14 +120,17 @@
         min-width: 500px;
     }
 }
+/* AccountIcon */
 .mobile-authentication-icon{
-    position: fixed;
+    position: absolute;
     display: block;
-    width: 100%;
-    bottom: 0px;
+    /* width: 100%; */
+    /* bottom: 0px; */
+    right: 5px;
     text-align: center;
+    top: 5px;
     background-color: white;
-    box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px;
+    /* box-shadow: rgb(28 28 28 / 8%) 0px 2px 8px; */
     border-top: 1px solid #d6d6d6;
     padding: 0.4rem;
 }
@@ -176,7 +177,59 @@
 .restaurant-list .restaurant-container .restaurant-container-type {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
+    color: black;
     /* white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis; */
+}
+/* Menu button  */
+.order-restaurant-menu{
+    position: fixed;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1rem;
+    background-color: #333333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+}
+.order-restaurant-menu-item{
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+@media (min-width:769px) {
+    .order-restaurant-menu{
+        display: none;
+    }
+}
+/* Order page  */
+
+@media (max-width:768px) {
+    .order-restaurant-image{
+        display: none;
+    }
+}
+.order-restaurant-header{
+    /* margin: 0px auto; */
+    margin-top: 2rem;
+    padding: 0px 10px;
+
+}
+.order-restaurant-header .order-restaurant-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+.order-restaurant-header .order-restaurant-rating{
+    margin: 0.3rem 0rem;
+
+}
+.order-restaurant-header .order-restaurant-type{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(151, 151, 151);
 }

@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
-function Order(props) {
+import Navbar from "./Navbar";
+import RestaurantOrder from "./RestaurantOrder";
+import AccountIcon from "./AccountIcon";
+function Order() {
     var { id } = useParams();
     const [restaurant, setRestaurant] = useState({
         id:"",
@@ -28,11 +30,18 @@ function Order(props) {
         return () => mounted = false;
     })
     return (
-
         <div>
-        {restaurant.name}
+        <Navbar searchDisplay = {false} />
+        <AccountIcon />
+        {/* {restaurant.name}
         <br />
-        {restaurant.items.map(item=>(<li>{item.name}</li>))}
+        {restaurant.items.map(item=>(<li>{item.name}</li>))} */}
+        <RestaurantOrder 
+            id = {restaurant.id}
+            name = {restaurant.name}
+            type = {restaurant.type}
+            foodItems = {restaurant.items}
+        />
         </div>
     );
 }

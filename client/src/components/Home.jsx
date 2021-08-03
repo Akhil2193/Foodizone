@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./Navbar"
 import RestaurantList from "./RestaurantList";
-
+import AccountIcon from "./AccountIcon";
 function Home() {
     return (
 
         <div>
-            <Navbar />
+            <Navbar searchDisplay={true} />
+            <AccountIcon />
             <RestaurantList />
             
         </div>
