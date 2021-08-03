@@ -142,7 +142,7 @@
     }
 }
 
-/* Page-content */
+/* Main Page-content */
 
 .restaurant-list {
     display: flex;
@@ -217,7 +217,7 @@
 }
 
 .order-restaurant-dropdown {
-    position: absolute;
+    position: fixed;
     bottom: 4.5rem;
     right: 1rem;
     list-style: none;
@@ -229,6 +229,8 @@
     overflow-y: scroll;
     border-radius: 0.3rem;
     border: 1px solid rgb(232, 232, 232);
+    background-color: white;
+    z-index: 9;
 }
 .order-restaurant-dropdown-item{
     padding:0.8rem 0.5rem;
@@ -238,7 +240,7 @@
 
 .order-restaurant-dropdown-item a {
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #616161;
     display: flex;
     justify-content: space-between;
@@ -273,3 +275,44 @@
     font-family: 'Roboto', sans-serif;
     color: rgb(151, 151, 151);
 }
+.order-restaurant-food-category-heading{
+    font-family: 'Raleway',sans-serif;
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding: 0px 10px;
+    padding-top: 2rem;
+    border-top: 1px solid #bcbcbc;
+}
+
+/* food Item  */
+.order-food-item{
+    margin: 2rem 10px;
+    display: flex;
+    
+}
+.order-food-item-image{
+    height: 6rem;
+    width: 6rem;
+    /* margin: 0px 10px; */
+    border-radius: 0.3rem;
+    display: inline;
+}
+.order-food-item-veg{
+    height: 1rem;
+    width: 1rem;
+    position: relative;
+    top: 0.3rem;
+    left: -1.3rem;
+    
+}
+.order-food-item-detail{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+/* .order-food-item-name{
+    display: inline;
+}
+.order-food-item-price {
+    display: inline;
+} */

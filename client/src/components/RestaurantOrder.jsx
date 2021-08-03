@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import FoodItem from "./FoodItem";
 import Menu from "./Menu";
 
 function RestaurantOrder(props) {
     const foodItems = props.foodItems;
     const [foodCategory, setFoodCategory] = useState([]);
-    const [foodItemSorted, setItemSorted] = useState([]);
+    const [foodItemSorted, setItemSorted] = useState([[]]);
+    const [load, setLoad] = useState(false);
     const [categoryCount, setCategoryCount] = useState([]);
     useEffect(() => {
         let mounted = true;
@@ -23,22 +25,24 @@ function RestaurantOrder(props) {
             let count = [];
             for (let index = 0; index < foodCategory.length; index++) {
                 let category = [];
-                for(let i=0;i<foodItems.length;i++){
-                    if (foodItems[i].category===foodCategory[index]) {
+                for (let i = 0; i < foodItems.length; i++) {
+                    if (foodItems[i].category === foodCategory[index]) {
                         category.push(foodItems[i]);
                     }
                 }
                 count.push(category.length);
                 array2d.push(category);
+
             }
             setItemSorted(array2d);
             setCategoryCount(count);
+            setLoad(true);
         }
-        
+
         return () => false;
-    },[foodCategory]);
+    }, [foodCategory]);
 
-
+    console.log(foodItemSorted[0]);
     return (
         <div className="order-restaurant">
             <section className="order-restaurant-header">
@@ -54,7 +58,22 @@ function RestaurantOrder(props) {
                     {props.type}
                 </div>
             </section>
-            <Menu key={props.id} category={foodCategory} categoryCount={categoryCount}/>
+            <Menu key={props.id} category={foodCategory} categoryCount={categoryCount} />
+            <section className="restaurant-menu">
+                {(foodCategory.map(function(category, index){
+                    return (
+                        <div className="order-restaurant-food-category">
+                            <h1 className="order-restaurant-food-category-heading">{category}</h1>
+                            {load?foodItemSorted[index].map(item =>  
+                                <FoodItem 
+                                key={item._id+index} 
+                                name={item.name} 
+                                price={item.price} 
+                                veg={item.veg} />):"data is loading"}
+                        </div>
+                    )}))
+                }
+            </section>
         </div>
     )
 }
