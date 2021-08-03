@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 /* navbar styling */
 
 .navbar {
@@ -24,7 +23,6 @@
 @media (max-width: 768px) {
     .navbar-list {
         flex-direction: column;
-        
     }
 }
 
@@ -115,13 +113,16 @@
 #search-bar::placeholder {
     color: rgb(151, 151, 151);
 }
+
 @media (min-width:769px) {
-    #search-bar{
+    #search-bar {
         min-width: 500px;
     }
 }
+
 /* AccountIcon */
-.mobile-authentication-icon{
+
+.mobile-authentication-icon {
     position: absolute;
     display: block;
     /* width: 100%; */
@@ -134,11 +135,13 @@
     border-top: 1px solid #d6d6d6;
     padding: 0.4rem;
 }
+
 @media (min-width:769px) {
-    .mobile-authentication-icon{
+    .mobile-authentication-icon {
         display: none;
     }
 }
+
 /* Page-content */
 
 .restaurant-list {
@@ -182,8 +185,10 @@
     overflow: hidden !important;
     text-overflow: ellipsis; */
 }
+
 /* Menu button  */
-.order-restaurant-menu{
+
+.order-restaurant-menu {
     position: fixed;
     bottom: 1rem;
     display: flex;
@@ -194,42 +199,77 @@
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 5rem;
+    border: none;
 }
-.order-restaurant-menu-item{
+
+.order-restaurant-menu-item {
     margin-right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
 }
+
 @media (min-width:769px) {
-    .order-restaurant-menu{
+    .order-restaurant-menu {
         display: none;
     }
 }
+
+.order-restaurant-dropdown {
+    position: absolute;
+    bottom: 4.5rem;
+    right: 1rem;
+    list-style: none;
+    max-height: 20rem;
+    width: 13rem;
+    -webkit-box-shadow: 0px 0px 15px -4px rgba(102, 102, 102, 1);
+    -moz-box-shadow: 0px 0px 15px -4px rgba(102, 102, 102, 1);
+    box-shadow: 0px 0px 15px -4px rgba(102, 102, 102, 1);
+    overflow-y: scroll;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(232, 232, 232);
+}
+.order-restaurant-dropdown-item{
+    padding:0.8rem 0.5rem;
+    
+
+}
+
+.order-restaurant-dropdown-item a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #616161;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Order page  */
 
 @media (max-width:768px) {
-    .order-restaurant-image{
+    .order-restaurant-image {
         display: none;
     }
 }
-.order-restaurant-header{
+
+.order-restaurant-header {
     /* margin: 0px auto; */
     margin-top: 2rem;
     padding: 0px 10px;
-
 }
-.order-restaurant-header .order-restaurant-title{
+
+.order-restaurant-header .order-restaurant-title {
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 1.8rem;
 }
-.order-restaurant-header .order-restaurant-rating{
-    margin: 0.3rem 0rem;
 
+.order-restaurant-header .order-restaurant-rating {
+    margin: 0.3rem 0rem;
 }
-.order-restaurant-header .order-restaurant-type{
+
+.order-restaurant-header .order-restaurant-type {
     font-family: 'Roboto', sans-serif;
     color: rgb(151, 151, 151);
 }

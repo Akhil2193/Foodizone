@@ -18,7 +18,7 @@ function Order() {
         .then(function(response){
             if(mounted){
                 setRestaurant({
-                    id:  response.data.id,
+                    id:  response.data._id,
                     name: response.data.name,
                     type: response.data.type,
                     items: [...response.data.foodItems]
@@ -28,15 +28,13 @@ function Order() {
             console.log(error);
         })
         return () => mounted = false;
-    })
+    },[])
     return (
         <div>
         <Navbar searchDisplay = {false} />
         <AccountIcon />
-        {/* {restaurant.name}
-        <br />
-        {restaurant.items.map(item=>(<li>{item.name}</li>))} */}
         <RestaurantOrder 
+            key = {restaurant.id}
             id = {restaurant.id}
             name = {restaurant.name}
             type = {restaurant.type}

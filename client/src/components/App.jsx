@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Order from "./Order";
-import {BrowserRouter as Router, Switch,Route,Link} from "react-router-dom";
+import {Switch,Route} from "react-router-dom";
 
 function App() {
     return (

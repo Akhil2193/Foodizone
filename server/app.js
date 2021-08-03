@@ -20,6 +20,7 @@ const restaurantSchema = new mongoose.Schema({
         {
             name: String,
             price: Number,
+            category: String,
             veg: Boolean
         }
     ]
@@ -33,33 +34,16 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 //         name: `Restaurant ${i+1}`,
 //         type: 'Fast-food',
 //         time: '8am - 10pm',
-//         foodItems: [
-//             {
-//                 name: 'Veg-Burger',
-//                 price: 100,
-//                 veg: true
-//             },
-//             {
-//                 name: 'Chicken Burger',
-//                 price: 200,
-//                 veg: false
-//             },
-//             {
-//                 name: 'Pizza',
-//                 price: 199,
-//                 veg: true
-
-//             }
-            
-//         ]
+//         foodItems: []
 //     })
 
 //     for (let index = 0; index < 20; index++) {
 //         var lel = Math.floor(Math.random() * 2);
 //         res.foodItems.push({
-//             name: `dish ${index+12}`,
+//             name: `dish ${index+1}`,
 //             price: `${Math.floor(Math.random() * 500) + 20}`,
-//             veg:`${lel===0?false:true}`
+//             veg:`${lel===0?false:true}`,
+//             category:`Category ${(index%4)+1}`
 
 //         })
 //     }

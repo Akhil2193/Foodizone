@@ -1,6 +1,5 @@
 import React from "react";
-import Order from "./Order";
-import {BrowserRouter as Router, Switch,Route,Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 function add3Dots(string, limit)
 {
   var dots = "...";
