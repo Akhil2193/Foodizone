@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import ClearRoundedIcon from '@material-ui/icons/ClearRounded';
 
 function add3Dots(string, limit)
 {
@@ -41,7 +42,7 @@ function Menu(props) {
             </div>
             <button className="order-restaurant-menu" onClick={handleClick}>
                 <div className="order-restaurant-menu-item">
-                    <MenuRoundedIcon fontSize="small" />
+                    {dropDown?<ClearRoundedIcon fontSize="small" />:<MenuRoundedIcon fontSize="small" />}
 
                 </div>
                 <div className="order-restaurant-menu-item">
