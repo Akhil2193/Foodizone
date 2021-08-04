@@ -60,19 +60,33 @@ function RestaurantOrder(props) {
             </section>
             <Menu key={props.id} category={foodCategory} categoryCount={categoryCount} />
             <section className="restaurant-menu">
-                {(foodCategory.map(function(category, index){
-                    return (
-                        <div className="order-restaurant-food-category">
-                            <h1 className="order-restaurant-food-category-heading">{category}</h1>
-                            {load?foodItemSorted[index].map(item =>  
-                                <FoodItem 
-                                key={item._id+index} 
-                                name={item.name} 
-                                price={item.price} 
-                                veg={item.veg} />):"data is loading"}
-                        </div>
-                    )}))
-                }
+                <section className="restaurant-menu-categories">
+                    {foodCategory.map(function(category,index){
+                        return (
+                            <a href={`#restaurant-menu-categories-${category}`}>
+                                {`${category} (${categoryCount[index]})`}
+                            </a>
+                        )
+                    }
+
+                    )}
+                </section>
+                <section className="restaurant-menu-detail">
+                    {(foodCategory.map(function (category, index) {
+                        return (
+                            <div className="order-restaurant-food-category">
+                                <h1 className="order-restaurant-food-category-heading" id={`restaurant-menu-categories-${category}`}>{category}</h1>
+                                {load ? foodItemSorted[index].map(item =>
+                                    <FoodItem
+                                        key={item._id + index}
+                                        name={item.name}
+                                        price={item.price}
+                                        veg={item.veg} />) : "data is loading"}
+                            </div>
+                        )
+                    }))
+                    }
+                </section>
             </section>
         </div>
     )

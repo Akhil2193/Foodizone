@@ -29,7 +29,7 @@ function Menu(props) {
             <div className="order-restaurant-dropdown" style={{ display: `${dropDown ? "block" : "none"}` }}>
                 {props.category.map((category,index) => {
                     return (
-                        <li className="order-restaurant-dropdown-item"><a href="www.google.com">
+                        <li className="order-restaurant-dropdown-item"><a href={`#restaurant-menu-categories-${category}`}>
                             <div className="order-restaurant-dropdown-item-text">
                                 {add3Dots(`${category}`,18)}
                             </div>

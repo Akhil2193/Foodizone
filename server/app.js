@@ -75,7 +75,30 @@ app.route('/api/:id')
                 res.send('No restaurants found by that name')
             }
         })
+    });
+app.route('/api/search/:search')
+.get(function(req,res){
+    res.header("Access-Control-Allow_Origin","*");
+    
+    const query= {
+        $or: [
+            {name:{$regex: req.params.search} },
+            {type:{$regex: req.params.search} },
+            {foodItems:{ $elemMatch: {name :{$regex: req.params.search}}}},
+            {foodItems:{ $elemMatch: {category :{$regex: req.params.search}}}}
+            
+        ]
+    };
+    
+    Restaurant.find(query,function (err, restaurants) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(restaurants);
+        }
     })
+})
 //admin portal
 app.route('/admin')
     .get(function (req, res) {
