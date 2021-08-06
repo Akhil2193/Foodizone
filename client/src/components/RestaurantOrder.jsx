@@ -16,7 +16,7 @@ function RestaurantOrder(props) {
             setFoodCategory([...new Set(allCategories)]);
 
         }
-        return () => false;
+        return () => mounted=false;
     }, [foodItems]);
     useEffect(() => {
         let mounted = true;
@@ -39,12 +39,11 @@ function RestaurantOrder(props) {
             setLoad(true);
         }
 
-        return () => false;
+        return () => mounted=false;
     }, [foodCategory]);
 
-    console.log(foodItemSorted[0]);
     return (
-        <div className="order-restaurant">
+        <div className="order-restaurant" key={props.id}>
             <section className="order-restaurant-header">
                 <img className="order-restaurant-image" src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80" alt="" />
                 <div className="order-restaurant-title">
@@ -58,7 +57,7 @@ function RestaurantOrder(props) {
                     {props.type}
                 </div>
             </section>
-            <Menu key={props.id} category={foodCategory} categoryCount={categoryCount} />
+            <Menu  category={foodCategory} categoryCount={categoryCount} />
             <section className="restaurant-menu">
                 <section className="restaurant-menu-categories">
                     {foodCategory.map(function(category,index){
@@ -79,9 +78,14 @@ function RestaurantOrder(props) {
                                 {load ? foodItemSorted[index].map(item =>
                                     <FoodItem
                                         key={item._id + index}
+                                        id={item._id}
                                         name={item.name}
                                         price={item.price}
-                                        veg={item.veg} />) : "data is loading"}
+                                        veg={item.veg}
+                                        addToCart = {props.addToCart}
+                                        removeFromCart={props.removeFromCart}
+                                        
+                                         />) : "data is loading"}
                             </div>
                         )
                     }))

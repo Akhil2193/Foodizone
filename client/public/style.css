@@ -334,6 +334,38 @@
     }
 }
 /* food Item  */
+.order-food{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.cart-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 10px;
+    
+}
+.add-to-cart{
+    padding: 0.3rem 0rem;
+    width: 5rem;
+    border-radius: 0.7rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto',sans-serif;
+    border:1px solid green;
+    background-color: #e1ffe1;
+    color: green;
+}
+.remove-from-cart{
+    padding: 0.3rem 0rem;
+    width: 5rem;
+    border-radius: 0.7rem;
+    font-family: 'Roboto',sans-serif;
+    border:1px solid red;
+    background-color: #fff1f1bf;
+    color: red;
+}
 .order-food-item{
     margin: 2rem 10px;
     display: flex;
