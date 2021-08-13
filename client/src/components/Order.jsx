@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import RestaurantOrder from "./RestaurantOrder";
 import AccountIcon from "./AccountIcon";
+import Cart from "./Cart"
 function Order() {
     var { id } = useParams();
     const [restaurant, setRestaurant] = useState({
@@ -16,6 +17,15 @@ function Order() {
     const [load, setLoad] = useState(false);
     const [total, setTotal] = useState(0);
     const [count, setCount] = useState(0);
+    const [cartDisplay, setCartDisplay] = useState(false);
+    function displayCart() {
+        if (cartDisplay) {
+            setCartDisplay(false)
+        }
+        else {
+            setCartDisplay(true)
+        }
+    }
     function addToCart(item) {
 
         const find = shoppingCart.findIndex(element => element.id === item.id)
@@ -62,7 +72,7 @@ function Order() {
     }, [count])
     useEffect(() => {
         let mounted = true;
-        axios.get(`http://localhost:5000/api/${id}`)
+        axios.get(`http://192.168.1.3:5000/api/${id}`)
             .then(function (response) {
                 if (mounted) {
                     setRestaurant({
@@ -79,6 +89,7 @@ function Order() {
     }, [])
     return (
         <div key={restaurant.id}>
+            <div style={{'display':cartDisplay?'none':'block'}} >
             <Navbar searchDisplay={false} />
             <AccountIcon />
             <RestaurantOrder
@@ -90,6 +101,17 @@ function Order() {
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
 
+            />
+            </div>
+            <Cart shoppingCart={shoppingCart}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+                restaurantName={restaurant.name}
+                restaurantId={restaurant.id}
+                restaurantType={restaurant.type}
+                total={total}
+                displayCart={displayCart}
+                cartDisplay={cartDisplay}
             />
         </div>
     );
