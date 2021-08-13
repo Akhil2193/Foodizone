@@ -448,96 +448,117 @@
     .checkout-desktop {
         display: none;
     }
-    .checkout-bill {
-        z-index: 4;
-        width: 100%;
-    }
-    .checkout-bill-close {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-    }
-    .checkout-bill-name {
-        margin: 0.5rem 10px;
-        font-family: 'Raleway', sans-serif;
-        font-size: 1.5rem;
-    }
-    .checkout-bill-restaurant-name {
-        font-family: 'Raleway', sans-serif;
-        font-size: 1.2rem;
-        margin: 0rem 10px;
-    }
-    .checkout-bill-type {
-        margin: 0rem 10px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 100;
-        border-bottom: 1px solid #ffc8c8;
-        padding-bottom: 0.3rem;
-    }
-    .checkout-bill-total {
-        background-color: white;
-        width: 100%;
-        border-top: 1px solid #d2d2d2;
-        font-family: 'Raleway',sans-serif;
-        padding-top: 1.5rem;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-    }
-    .checkout-bill-total1 {
-        display: flex;
-        justify-content: space-between;
-        font-family: 'Lato', sans-serif;
-        margin: 0.5rem 0rem;
-    }
-    .checkout-bill-total2 {
-        border-top: 1px #ffcfcf solid;
-        font-family: 'Lato', sans-serif;
-        display: flex;
-        justify-content: space-between;
-        margin: 0.5rem 0rem;
-        padding-top: 1rem;
-    }
-    .checkout-bill-total3{
-        border: none;
-        background-color: #14e314;
-        width: 100%;
-        padding: 1rem 0rem;
-        font-family: 'Raleway',sans-serif;
-        font-size: 1.1rem;
-        color: white;
-        border-radius: 1rem;
-        margin-top: 1rem;
+}
 
-    }
-    .checkout-bill-empty{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .empty-cart{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-family: 'Raleway',sans-serif;
-    }
-    .empty-cart-child1{
-        margin: 1rem;
-    }
-    .empty-cart-child2{
-        color: #616161;
-    }
-    .empty-cart-child3{
-        margin-top: 1rem;
-        border: 1px solid red;
-        padding: 0.5rem 2rem;
-        background-color: white;
-       
-    }
-    .empty-cart-child3 span{
-        text-decoration: none;
-        color: red;
-    }
+.checkout-bill {
+    z-index: 4;
+    width: 100%;
+}
+
+.checkout-bill-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.checkout-bill-name {
+    margin: 0.5rem 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+}
+
+.checkout-bill-restaurant-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    margin: 0rem 10px;
+}
+
+.checkout-bill-type {
+    margin: 0rem 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    border-bottom: 1px solid #ffc8c8;
+    padding-bottom: 0.3rem;
+}
+
+.checkout-bill-total {
+    background-color: white;
+    width: 100%;
+    border-top: 1px solid #d2d2d2;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 1.5rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.checkout-bill-total1 {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Lato', sans-serif;
+    margin: 0.5rem 0rem;
+}
+
+.checkout-bill-total2 {
+    border-top: 1px #ffcfcf solid;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0rem;
+    padding-top: 1rem;
+}
+
+.checkout-bill-total3 {
+    border: none;
+    background-color: #14e314;
+    width: 100%;
+    padding: 1rem 0rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+.checkout-bill-total3:hover{
+    background-color: #20d120;
+}
+.checkout-bill-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.empty-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+}
+
+.empty-cart-child1 {
+    margin: 1rem;
+}
+
+.empty-cart-child2 {
+    color: #616161;
+}
+
+.empty-cart-child3 {
+    margin-top: 1rem;
+    border: 1px solid red;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.empty-cart-child3:hover {
+    background-color: #fff5f5;
+}
+
+.empty-cart-child3 span {
+    text-decoration: none;
+    color: red;
 }

@@ -13,7 +13,7 @@ function Cart(props) {
                 <ShoppingCartTwoToneIcon fontSize="small" />
             </div>
         </div>
-        <div className="checkout-desktop" onClick={props.displayCart} >
+        <div className="checkout-desktop" onClick={props.displayCart} style={{ 'display': props.cartDisplay ? 'none' : 'flex' }}>
             <div style={{ 'display': props.cartDisplay ? 'none' : 'flex' }}>
                 <ShoppingCartTwoToneIcon />
                 View Cart
@@ -85,7 +85,7 @@ function Cart(props) {
                 <ShoppingCartTwoToneIcon fontSize="small" />
             </div>
         </div>
-        <div className="checkout-desktop" onClick={props.displayCart} >
+        <div className="checkout-desktop" onClick={props.displayCart} style={{ 'display': props.cartDisplay ? 'none' : 'flex' }}>
             <div style={{ 'display': props.cartDisplay ? 'none' : 'flex' }}>
                 <ShoppingCartTwoToneIcon />
                 View Cart
