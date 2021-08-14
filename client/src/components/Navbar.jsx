@@ -19,8 +19,8 @@ function Navbar(props) {
                 <input onChange={handleSearch} name="search-bar" id="search-bar" placeholder="Search for restaurant, cuisine or a dish" spellCheck="false" />
                 <label onClick={handleClick} htmlFor="search-bar"><SearchIcon style={{ color: '#787878' }}  /></label>
             </li>
-            <li className="authorisation navbar-list-items"><a href="https://www.google.com/">Log in</a></li>
-            <li className="authorisation navbar-list-items"><a href="https://www.google.com/">Sign up</a></li>
+            <li className="authorisation navbar-list-items"><a href="/authenticate">Log in</a></li>
+            <li className="authorisation navbar-list-items"><a href="/authenticate/register">Sign up</a></li>
         </ul>
         
     </nav>)
