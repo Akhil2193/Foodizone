@@ -16,7 +16,7 @@ function RestaurantOrder(props) {
             setFoodCategory([...new Set(allCategories)]);
 
         }
-        return () => mounted=false;
+        return () => mounted = false;
     }, [foodItems]);
     useEffect(() => {
         let mounted = true;
@@ -39,13 +39,19 @@ function RestaurantOrder(props) {
             setLoad(true);
         }
 
-        return () => mounted=false;
-    }, [foodCategory,foodItems]);
+        return () => mounted = false;
+    }, [foodCategory, foodItems]);
 
     return (
         <div className="order-restaurant" key={props.id}>
             <section className="order-restaurant-header">
-                <img className="order-restaurant-image" src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80" alt="" />
+                <div className="order-restaurant-image-header">
+                    <img className="order-restaurant-image1" src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80" alt="" />
+                    <div className="order-restaurant-image-child">
+                        <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80" alt="" className="order-restaurant-image2 marginbottom5" />
+                        <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80" alt="" className="order-restaurant-image2 margintop5" />
+                    </div>
+                </div>
                 <div className="order-restaurant-title">
                     {props.name}
 
@@ -57,10 +63,10 @@ function RestaurantOrder(props) {
                     {props.type}
                 </div>
             </section>
-            <Menu  category={foodCategory} categoryCount={categoryCount} />
+            <Menu category={foodCategory} categoryCount={categoryCount} />
             <section className="restaurant-menu">
                 <section className="restaurant-menu-categories">
-                    {foodCategory.map(function(category,index){
+                    {foodCategory.map(function (category, index) {
                         return (
                             <a href={`#restaurant-menu-categories-${category}`}>
                                 {`${category} (${categoryCount[index]})`}
@@ -82,10 +88,10 @@ function RestaurantOrder(props) {
                                         name={item.name}
                                         price={item.price}
                                         veg={item.veg}
-                                        addToCart = {props.addToCart}
+                                        addToCart={props.addToCart}
                                         removeFromCart={props.removeFromCart}
-                                        
-                                         />) : "data is loading"}
+
+                                    />) : "data is loading"}
                             </div>
                         )
                     }))
