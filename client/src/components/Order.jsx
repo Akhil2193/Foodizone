@@ -72,7 +72,7 @@ function Order() {
     }, [count])
     useEffect(() => {
         let mounted = true;
-        axios.get(`http://192.168.1.3:5000/api/${id}`)
+        axios.get(`http://localhost:5000/api/${id}`)
             .then(function (response) {
                 if (mounted) {
                     setRestaurant({

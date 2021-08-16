@@ -1,28 +1,40 @@
-import React from "react";
-import Home from "./Home";
-import Order from "./Order";
-import {Switch,Route} from "react-router-dom";
-import Login from "./Authentication/Login"
-import Register from "./Authentication/Register"
+import React, { useState, useEffect } from "react";
+import AppRoutes from "./AppRoutes"
+import axios from "axios";
+axios.defaults.withCredentials = true;
+
 function App() {
-    return (
-        <Switch>
-            <Route exact path={`/:id/order`}>
-                <Order />
-                
-            </Route>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            <Route exact path="/authenticate">
-                <Login />
-            </Route>
-            <Route exact path="/authenticate/register">
-                <Register />
-            </Route>
-        </Switch>
-        
-    );
+
+    const [loggedIn, setLoggedIn] = useState();
+    const [load, setLoad] = useState(false);
+    useEffect(() => {
+        axios.get('http://localhost:5000/authenticate', {
+            withCredentials: true
+        })
+            .then(function (response) {
+                console.log(response.data)
+                setLoggedIn(response.data.authentication)
+                setLoad(true);
+
+            }).catch(function (err) {
+                console.log(err);
+                setLoggedIn(false);
+                setLoad(true)
+            })
+    }, [])
+    function authenticated(value) {
+        setLoggedIn(value);
+    }
+    console.log(loggedIn)
+    if (load) {
+
+        return (
+            <AppRoutes authenticated={authenticated} loggedIn={loggedIn} />
+
+        );
+    } else {
+        return <h1>Loading...</h1>
+    }
 }
 
 export default App;
