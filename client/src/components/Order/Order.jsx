@@ -63,13 +63,12 @@ function Order() {
         }
     }
     useEffect(() => {
-        let mounted = true
         var totalPrice = 0;
         shoppingCart.forEach(element => {
             totalPrice += (element.price * element.quantity)
         });
         setTotal(totalPrice);
-    }, [count])
+    }, [count,shoppingCart])
     useEffect(() => {
         let mounted = true;
         axios.get(`http://localhost:5000/api/${id}`)
@@ -86,7 +85,7 @@ function Order() {
                 console.log(error);
             })
         return () => mounted = false;
-    }, [])
+    }, [id])
     return (
         <div key={restaurant.id}>
             <div style={{'display':cartDisplay?'none':'block'}} >

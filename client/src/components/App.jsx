@@ -12,7 +12,6 @@ function App() {
             withCredentials: true
         })
             .then(function (response) {
-                console.log(response.data)
                 setLoggedIn(response.data.authentication)
                 setLoad(true);
 
@@ -25,7 +24,6 @@ function App() {
     function authenticated(value) {
         setLoggedIn(value);
     }
-    console.log(loggedIn)
     if (load) {
 
         return (

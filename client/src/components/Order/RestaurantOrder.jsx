@@ -40,7 +40,7 @@ function RestaurantOrder(props) {
         }
 
         return () => mounted=false;
-    }, [foodCategory]);
+    }, [foodCategory,foodItems]);
 
     return (
         <div className="order-restaurant" key={props.id}>
