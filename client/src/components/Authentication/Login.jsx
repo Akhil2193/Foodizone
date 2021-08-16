@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
+import Footer from "../Footer/Footer"
 import axios from "axios";
 axios.defaults.withCredentials = true
 
@@ -57,6 +58,7 @@ function Login(props) {
                     <p className="register-link"> New User? <Link to="/authenticate/register" style={{ textDecoration: 'none' }}> Sign up</Link></p>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }

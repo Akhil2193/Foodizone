@@ -655,3 +655,39 @@
     font-family: 'Raleway',sans-serif;
     font-size: 0.8rem;
 }
+/* Footer  */
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway',sans-serif;
+    flex-direction: column;
+    background-color: #3b3b3b;
+    color: white;
+    padding: 1rem;
+    
+}
+.footer p span {
+    font-family: 'Style Script',cursive;
+}
+.footer a{
+    color: #14e314;
+    text-decoration: none;
+}
+/* scroll bar  */
+::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    }
+    ::-webkit-scrollbar-thumb{
+    background: #3b3b3b;
+    border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+    background: #B1B2B5;
+    }
+    ::-webkit-scrollbar-track{
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: inset 7px 10px 12px 0px #F0F0F0;
+    }

@@ -5,6 +5,7 @@ import Navbar from "../Navbar";
 import RestaurantOrder from "./RestaurantOrder";
 import AccountIcon from "../AccountIcon";
 import Cart from "../Checkout/Cart"
+import Footer from "../Footer/Footer"
 function Order() {
     var { id } = useParams();
     const [restaurant, setRestaurant] = useState({
@@ -112,6 +113,7 @@ function Order() {
                 displayCart={displayCart}
                 cartDisplay={cartDisplay}
             />
+            <Footer />
         </div>
     );
 }
