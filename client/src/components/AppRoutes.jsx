@@ -1,6 +1,6 @@
 import React from "react";
-import Home from "./Home";
-import Order from "./Order";
+import Home from "./Home/Home";
+import Order from "./Order/Order";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./Authentication/Login"
 import Register from "./Authentication/Register"

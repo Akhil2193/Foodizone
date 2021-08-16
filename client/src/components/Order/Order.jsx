@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 import RestaurantOrder from "./RestaurantOrder";
-import AccountIcon from "./AccountIcon";
-import Cart from "./Cart"
+import AccountIcon from "../AccountIcon";
+import Cart from "../Checkout/Cart"
 function Order() {
     var { id } = useParams();
     const [restaurant, setRestaurant] = useState({

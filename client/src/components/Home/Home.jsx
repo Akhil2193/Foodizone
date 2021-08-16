@@ -1,9 +1,9 @@
 import React, { useState,useEffect } from "react";
 import axios from "axios";
-import Navbar from "./Navbar"
+import Navbar from "../Navbar"
 import RestaurantList from "./RestaurantList";
-import AccountIcon from "./AccountIcon";
-import RestaurantSearch from "./RestaurantSearch";
+import AccountIcon from "../AccountIcon";
+
 
 function Home() {
     const [restaurantSearch, setRestaurantSearch] = useState("");
