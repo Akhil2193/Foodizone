@@ -23,8 +23,13 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.set('useCreateIndex', true);
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+});
+
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 const restaurantSchema = new mongoose.Schema({
