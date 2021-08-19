@@ -4,7 +4,7 @@ import Order from "./Order/Order";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./Authentication/Login"
 import Register from "./Authentication/Register"
-
+import Location from "./Payment/Location"
 function AppRoutes(props) {
     return (
         <Switch>
@@ -20,6 +20,9 @@ function AppRoutes(props) {
             </Route>
             <Route exact path="/authenticate/register">
                 <Register />
+            </Route>
+            <Route exact path='/:id/order/location'>
+                <Location />
             </Route>
         </Switch>
 

@@ -3,7 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+.title{
+    font-family: 'Style Script', cursive;
+}
 /* navbar styling */
 
 .navbar {
@@ -263,6 +265,11 @@
 .order-restaurant-image-header{
     display: flex;
 }
+@media (max-width:768px){
+    .order-restaurant-image-header{
+        display: none;
+    }
+}
 .order-restaurant-image-child{
     display: flex;
     flex-direction: column;
@@ -476,6 +483,7 @@
 .checkout-bill {
     z-index: 4;
     width: 100%;
+    min-height: 100vh;
 }
 
 .checkout-bill-close {
@@ -674,6 +682,12 @@
     color: #14e314;
     text-decoration: none;
 }
+.footer p{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+}
 /* scroll bar  */
 ::-webkit-scrollbar{
     width: 10px;
@@ -691,3 +705,54 @@
     border-radius: 10px;
     box-shadow: inset 7px 10px 12px 0px #F0F0F0;
     }
+/* location  */
+.location-head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+.location-head .location{
+    padding: 2rem;
+    padding-top: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0px 10px;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(207, 207, 207, 1);
+    -moz-box-shadow: 0px 0px 13px 2px rgba(207, 207, 207, 1);
+    box-shadow: 0px 0px 13px 2px rgba(207, 207, 207, 1);
+}
+.location-head .location .location-text{
+    font-family: 'Raleway', sans-serif;
+    margin-top: 1rem;
+}
+.location-head .location input{
+    padding: 0.5rem 0rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    /* border-radius: 0.5rem; */
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #848ea4;
+}
+.location-head .location .location-submit {
+    margin-top: 1.5rem;
+    border: 1px solid red;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.location-head .location .location-submit:hover {
+    background-color: #fff5f5;
+}
+.location-head .location .alert{
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    transition: all 0.3s ease;
+    color: red;
+    font-family: 'Raleway',sans-serif;
+}

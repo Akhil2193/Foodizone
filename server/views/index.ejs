@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" action="/admin">
+        <p>Restaurant Name</p>
+        <input name='name' placeholder="Enter your Restaurant Name" type="text" />
+
+        <p>Restaurant Type</p>
+        <input name='type' placeholder="Italian, South Indian..." type="text" />
+        <h1>Menu Items:</h1>
+        <button>+</button>
+        <div id="food-items">
+            <div>
+                <p>Food Item Name</p>
+                <input name='name' placeholder='Enter Food Item Name' type='text' />
+                <p>Item Price</p>
+                <input type="text" name='price' placeholder="Enter Item Price" />
+
+                <p>Veg</p>
+                <input type="radio" name="Veg"> Yes
+                <input type="radio" name="Veg"> No
+
+                <p>Item Category</p>
+                <input type="text" name="category" placeholder="Snacks, Dinner, Beverages...">
+            </div>
+        </div>
+    </form>
+    <script src="addMenuItem.js"></script>
+</body>
+
+</html>

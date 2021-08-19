@@ -1,20 +1,23 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const port = 5000;
 const session = require('express-session');
 const passport = require('passport');
-const passportLocalMongoose = require('passport-local-mongoose')
+const passportLocalMongoose = require('passport-local-mongoose');
 const cors = require('cors');
 
 const app = express();
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const uri = 'mongodb://akhil:fooddelievery@cluster0-shard-00-00.9z6rv.mongodb.net:27017,cluster0-shard-00-01.9z6rv.mongodb.net:27017,cluster0-shard-00-02.9z6rv.mongodb.net:27017/restaurants?ssl=true&replicaSet=atlas-4rhtc8-shard-0&authSource=admin&retryWrites=true&w=majority'
+app.set('view engine','ejs');
+app.use(express.static('public'))
+const uri = process.env.DB_URI;
 
 app.use(session({
-    secret:"our little secret.",
+    secret:process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }))
@@ -46,44 +49,11 @@ const userSchema = new mongoose.Schema({
 })
 userSchema.plugin(passportLocalMongoose);
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
-//-----to create a restaurant-----
-// for (var i = 0; i < 16; i++) {
-
-
-//     const res = new Restaurant({
-//         name: `Restaurant ${i+1}`,
-//         type: 'Fast-food',
-//         time: '8am - 10pm',
-//         foodItems: []
-//     })
-
-//     for (let index = 0; index < 20; index++) {
-//         var lel = Math.floor(Math.random() * 2);
-//         res.foodItems.push({
-//             name: `dish ${index+1}`,
-//             price: `${Math.floor(Math.random() * 500) + 20}`,
-//             veg:`${lel===0?false:true}`,
-//             category:`Category ${(index%4)+1}`
-
-//         })
-//     }
-//     res.save(function (err, presentRes) {
-//         if (err) {
-//             console.log(err);
-//         }
-//     })
-// }
 const User = new mongoose.model('User',userSchema);
 passport.use(User.createStrategy());
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-// passport.serializeUser((user,done)=>{
-//     done(null,user);
-// })
-// passport.deserializeUser((user,done)=>{
-//     done(null,user);
-// })
 
 app.use(
     cors({
@@ -142,7 +112,7 @@ app.route('/api/search/:search')
 //admin portal
 app.route('/admin')
     .get(function (req, res) {
-        res.sendFile(__dirname + '/admin/index.html')
+        res.render('index')
     });
 
 app.post('/register',function(req,res){
@@ -167,7 +137,6 @@ app.post('/login',function(req,res){
         username:req.body.username,
         password: req.body.password
     })
-    console.log(req.body)
     req.login(user,function(err){
         if(err){
             console.log(err);

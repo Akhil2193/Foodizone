@@ -72,10 +72,11 @@ function Cart(props) {
                             <span>&#8377;</span> {props.total + 40}
                         </div>
                     </div>
-
+                    <Link to={`/${props.restaurantId}/order/location`} style={{textDecoration:'none'}}>
                     <button className="checkout-bill-total3">
                         Order Now
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>)
