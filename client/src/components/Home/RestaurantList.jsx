@@ -8,7 +8,7 @@ function RestaurantList() {
     useEffect(() => {
         
             let mounted = true;
-            axios.get(`http://localhost:5000/api/`)
+            axios.get(`https://foodizone-server.herokuapp.com/api`)
                 .then(function (response) {
                     if (mounted) {
                         const updateRestaurants = [...response.data];

@@ -25,7 +25,7 @@ function Login(props) {
     function handleSubmit(event) {
         event.preventDefault();
         console.log(form)
-        axios.post("http://localhost:5000/login", form, {
+        axios.post("https://foodizone-server.herokuapp.com/login", form, {
             withCredentials: true
         })
             .then(function (response) {

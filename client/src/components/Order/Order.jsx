@@ -72,7 +72,7 @@ function Order() {
     }, [count,shoppingCart])
     useEffect(() => {
         let mounted = true;
-        axios.get(`http://localhost:5000/api/${id}`)
+        axios.get(`https://foodizone-server.herokuapp.com/api/${id}`)
             .then(function (response) {
                 if (mounted) {
                     setRestaurant({

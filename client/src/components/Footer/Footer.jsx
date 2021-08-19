@@ -9,7 +9,7 @@ function Footer() {
                     Made by <a href="https://github.com/Akhil2193">
                         Akhil Bansal
                     </a>
-                </p><a href="#" >View Repository</a>
+                </p><a href="https://github.com/Akhil2193/Foodizone" >View Repository</a>
             </section>
         </div>
     )

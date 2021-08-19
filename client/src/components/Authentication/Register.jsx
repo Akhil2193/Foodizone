@@ -9,7 +9,7 @@ function Register() {
                 <div className="logo authenticate-logo">foodizone</div>
             </Link>
             <div className="login-form">
-                <form className="login-form-form" method="post" action="http://localhost:5000/register" >
+                <form className="login-form-form" method="post" action="https://foodizone-server.herokuapp.com/register" >
                     <p className="login-form-creds">Name</p>
                     <input type="text" name="name" placeholder="Enter Name" className="login-form-input" />
 

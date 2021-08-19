@@ -8,7 +8,7 @@ function App() {
     const [loggedIn, setLoggedIn] = useState();
     const [load, setLoad] = useState(false);
     useEffect(() => {
-        axios.get('http://localhost:5000/authenticate', {
+        axios.get('https://foodizone-server.herokuapp.com/authenticate', {
             withCredentials: true
         })
             .then(function (response) {
