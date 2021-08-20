@@ -62,7 +62,7 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(
     cors({
-        origin: 'http://localhost:3000',
+        origin: 'https://foodizone-food-delivery.herokuapp.com/',
         methods: 'GET,HEAD,PUT,POST,PATCH,DELETE',
         credentials: true
     })
