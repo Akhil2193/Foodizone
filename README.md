@@ -1,5 +1,4 @@
 # FOODIZONE - FOOD DELIVERY APPICATION
-<hr style="height:0.5px;"> </hr>
 
 ## Setting up the Develpoment Environment
  
