@@ -25,7 +25,7 @@ Password: 123456789aA
 * Tried to make UI/UX suitable for cross-platform functioning.
 * Implemented various components from Material-UI.
 * The search bar is not yet working.
-* Learnt how to deploy a roduction build using heroku.
+* Learnt how to deploy a production build using heroku.
   
 ## Future Contributions
 * Design an admin portal for managing the Restaurants and adding new Restaurants.
