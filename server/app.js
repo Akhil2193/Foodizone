@@ -128,10 +128,10 @@ app.post('/register', function (req, res) {
     }, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
-            res.redirect('http://localhost:3000/authenticate/register')
+            res.redirect('https://foodizone-food-delivery.herokuapp.com/authenticate/register')
         } else {
             passport.authenticate('local')(req, res, function () {
-                res.redirect('http://localhost:3000')
+                res.redirect('https://foodizone-food-delivery.herokuapp.com')
 
             })
         }
