@@ -30,3 +30,6 @@ Password: 123456789aA
 ## Future Contributions
 * Design an admin portal for managing the Restaurants and adding new Restaurants.
 
+
+All the images are downloaded from https://unsplash.com/ and there credits goes to the respective owners.
+
