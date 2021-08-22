@@ -4,7 +4,7 @@ function FoodItem(props) {
     return (
         <div className="order-food">
             <div className="order-food-item">
-                <img className="order-food-item-image" src="https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg?size=626&ext=jpg" alt="" />
+                <img className="order-food-item-image" src={`/images/dishes/${Math.floor(Math.random() * 5) + 1}.jpg`} alt="" />
                 <img src="/images/veg.png" alt="" className="order-food-item-veg" style={{ filter: `${props.veg ? "none" : "hue-rotate(247deg)"}` }} />
                 <div className="order-food-item-detail">
                     <p className="order-food-item-name">
