@@ -1,4 +1,4 @@
-# FOODIZONE - FOOD DELIVERY APPICATION\
+# FOODIZONE - FOOD DELIVERY APPICATION
 
 A Food delivery app made as a part of Induction project for [DEVSOC, BITS Goa](https://devsoc.club/).
 
