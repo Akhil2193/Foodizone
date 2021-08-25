@@ -14,7 +14,7 @@ function Register() {
                     <input type="text" name="name" placeholder="Enter Name" className="login-form-input" />
 
                     <p className="login-form-creds">Email (username)</p>
-                    <input type="text" name="username" placeholder="example@example.com" className="login-form-input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                    <input type="email" name="username" placeholder="example@example.com" className="login-form-input" />
 
                     <p className="login-form-creds">Password</p>
                     <input type="password" name="password" placeholder="Enter Password" className="login-form-input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"

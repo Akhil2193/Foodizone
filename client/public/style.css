@@ -428,6 +428,7 @@
     position: relative;
     top: 0.3rem;
     left: -1.3rem;
+    background-color: white;
 }
 
 .order-food-item-detail {
@@ -673,6 +674,7 @@
     background-color: #3b3b3b;
     color: white;
     padding: 1rem;
+    margin-top: 2rem;
     
 }
 .footer p span {

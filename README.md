@@ -1,4 +1,7 @@
-# FOODIZONE - FOOD DELIVERY APPICATION
+# FOODIZONE - FOOD DELIVERY APPICATION\
+
+A Food delivery app made as a part of Induction project for DEVSOC, BITS Goa.
+
 
 ## Setting up the Develpoment Environment
  
@@ -24,11 +27,8 @@ Password: 123456789aA
 * Learnt more about CORS and resolved some errors related to it.
 * Tried to make UI/UX suitable for cross-platform functioning.
 * Implemented various components from Material-UI.
-* The search bar is not yet working.
 * Learnt how to deploy a production build using heroku.
-  
-## Future Contributions
-* Design an admin portal for managing the Restaurants and adding new Restaurants.
+* The search bar is not yet working. There were some errors which I was not able to solve due to the time-constraint, so I removed the entire functioning for the time being.
 
 
 All the images are downloaded from https://unsplash.com/ and there credits goes to the respective owners.
